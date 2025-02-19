@@ -4,8 +4,12 @@ Una aplicación web moderna para meditación y técnicas de respiración guiada,
 
 ## 📱 Imagenes de la Aplicacion 📱
 
-![Pantalla principal](https://via.placeholder.com/800x450?text=Pantalla+Principal+RespiraVida)
-![Panel de estadísticas](https://via.placeholder.com/800x450?text=Panel+de+Estadisticas)
+![Pantalla principal modo claro🌓]![Captura de pantalla_19-2-2025_163916_](https://github.com/user-attachments/assets/78c7f3ea-9920-4ddc-95f8-924942105cca)
+
+![Pantalla modo oscuro🌓]![Captura de pantalla_19-2-2025_163934_](https://github.com/user-attachments/assets/2879d77a-1cfb-42ef-9682-d453e2f4c17c)
+
+![Panel de musica🎵]![Captura de pantalla_19-2-2025_164050_](https://github.com/user-attachments/assets/0535a0d9-7904-4639-892f-dff35d60fbb8)
+
 
 ## ✨ Características
 
