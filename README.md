@@ -55,7 +55,7 @@ git clone https://github.com/Lizzy0981/RespiraVida-MeditacionInteractiva.git
 
 2. Abre el archivo index.html en tu navegador o usa un servidor local como Live Server de VSCode.
 
-3. También puedes acceder a la versión desplegada [aquí](https://respiravida.vercel.app/).
+3. También puedes acceder a la versión desplegada [aquí](https://respira-vida-meditacion-interactiva.vercel.app/).
 
 ## 💡 Uso
 
