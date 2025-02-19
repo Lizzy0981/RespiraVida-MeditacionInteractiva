@@ -1,0 +1,456 @@
+<!-- 
+  Este archivo contiene el código HTML para los paneles laterales 
+  Incluye: panel de insights, panel de configuración y panel de música
+  Puedes incluir este contenido en el archivo index.html donde corresponda
+-->
+
+<!-- PANEL DE INSIGHTS -->
+<div id="insightsPanelContent">
+  <button class="close-panel" id="closePanel">×</button>
+  <h2 class="insights-title">Tus Insights de Meditación</h2>
+  
+  <div class="insights-tabs">
+    <button class="tab-button active" data-tab="daily">Diario</button>
+    <button class="tab-button" data-tab="weekly">Semanal</button>
+    <button class="tab-button" data-tab="monthly">Mensual</button>
+  </div>
+  
+  <div class="tab-content" id="dailyTab">
+    <div class="stats-summary">
+      <div class="summary-item">
+        <span class="summary-value">3</span>
+        <span class="summary-label">Sesiones hoy</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-value">45m</span>
+        <span class="summary-label">Tiempo total</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-value">78%</span>
+        <span class="summary-label">Coherencia</span>
+      </div>
+    </div>
+    
+    <div class="insight-chart">
+      <div class="chart-header">
+        <h3>Coherencia durante el día</h3>
+        <span class="chart-legend">
+          <span class="legend-dot" style="background-color: var(--primary);"></span> Coherencia
+          <span class="legend-dot" style="background-color: var(--accent);"></span> Frecuencia cardíaca
+        </span>
+      </div>
+      <div class="chart-container">
+        <svg width="100%" height="150" viewBox="0 0 400 150">
+          <!-- Rejilla -->
+          <line x1="0" y1="30" x2="400" y2="30" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <line x1="0" y1="60" x2="400" y2="60" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <line x1="0" y1="90" x2="400" y2="90" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          
+          <!-- Línea de coherencia -->
+          <path d="M0,120 C50,100 100,90 150,70 S250,40 300,50 S350,70 400,60" stroke="var(--primary)" fill="none" stroke-width="3"/>
+          
+          <!-- Línea de ritmo cardíaco -->
+          <path d="M0,80 C50,85 100,100 150,90 S250,95 300,85 S350,75 400,80" stroke="var(--accent)" fill="none" stroke-width="3" stroke-dasharray="5,5"/>
+          
+          <!-- Puntos de datos -->
+          <circle cx="150" cy="70" r="5" fill="var(--primary)"/>
+          <circle cx="300" cy="50" r="5" fill="var(--primary)"/>
+          <circle cx="150" cy="90" r="5" fill="var(--accent)"/>
+          <circle cx="300" cy="85" r="5" fill="var(--accent)"/>
+        </svg>
+      </div>
+    </div>
+    
+    <div class="insight-card highlight-card">
+      <div class="insight-header">
+        <h3>Sesión destacada</h3>
+        <span class="insight-date">Hoy, 19:45</span>
+      </div>
+      <p>Alcanzaste una coherencia respiratoria del 82% durante 15 minutos. Tu ritmo cardíaco se redujo de 72 a 65 ppm.</p>
+      <div class="card-badges">
+        <span class="badge">15 min</span>
+        <span class="badge">4-7-8</span>
+        <span class="badge success">82% coherencia</span>
+      </div>
+    </div>
+    
+    <div class="insight-card">
+      <div class="insight-header">
+        <h3>Recomendación</h3>
+        <span class="insight-date">Basado en tu progreso</span>
+      </div>
+      <p>Prueba la técnica de respiración diafragmática 4-7-8 para mejorar tu concentración y reducir la ansiedad.</p>
+      <button class="apply-button">Aplicar ahora</button>
+    </div>
+  </div>
+  
+  <div class="tab-content hidden" id="weeklyTab">
+    <div class="stats-summary">
+      <div class="summary-item">
+        <span class="summary-value">15</span>
+        <span class="summary-label">Sesiones esta semana</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-value">3.5h</span>
+        <span class="summary-label">Tiempo total</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-value">+12%</span>
+        <span class="summary-label">Mejora</span>
+      </div>
+    </div>
+    
+    <div class="insight-card rotating">
+      <svg width="100%" height="100" viewBox="0 0 400 100">
+        <path d="M0,50 C100,100 300,0 400,50" stroke="rgba(255,255,255,0.3)" fill="none" stroke-width="2"></path>
+        <path d="M0,50 C100,0 300,100 400,50" stroke="rgba(255,255,255,0.3)" fill="none" stroke-width="2"></path>
+        <circle cx="200" cy="50" r="5" fill="white"></circle>
+      </svg>
+      <p>Tu variabilidad del ritmo cardíaco ha mejorado un 12% desde que comenzaste. Esto indica una mejor adaptabilidad al estrés.</p>
+    </div>
+    
+    <div class="insight-card">
+      <div class="insight-header">
+        <h3>Patrón descubierto</h3>
+        <span class="insight-date">Últimas 7 sesiones</span>
+      </div>
+      <p>Las sesiones nocturnas muestran una coherencia 23% mayor que las matutinas. Considera meditar antes de dormir.</p>
+      <div class="pattern-visualization">
+        <div class="pattern-bar" style="height: 50px; background: var(--primary);"><span>AM</span></div>
+        <div class="pattern-bar" style="height: 65px; background: var(--accent);"><span>PM</span></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-content hidden" id="monthlyTab">
+    <div class="monthly-calendar">
+      <div class="calendar-header">Febrero 2025</div>
+      <div class="calendar-grid">
+        <div class="calendar-day">L</div>
+        <div class="calendar-day">M</div>
+        <div class="calendar-day">X</div>
+        <div class="calendar-day">J</div>
+        <div class="calendar-day">V</div>
+        <div class="calendar-day">S</div>
+        <div class="calendar-day">D</div>
+        
+        <div class="calendar-date empty"></div>
+        <div class="calendar-date empty"></div>
+        <div class="calendar-date empty"></div>
+        <div class="calendar-date empty"></div>
+        <div class="calendar-date">1</div>
+        <div class="calendar-date">2</div>
+        <div class="calendar-date">3</div>
+        
+        <div class="calendar-date">4</div>
+        <div class="calendar-date">5</div>
+        <div class="calendar-date streak">6</div>
+        <div class="calendar-date streak">7</div>
+        <div class="calendar-date streak">8</div>
+        <div class="calendar-date">9</div>
+        <div class="calendar-date">10</div>
+        
+        <div class="calendar-date">11</div>
+        <div class="calendar-date streak">12</div>
+        <div class="calendar-date streak">13</div>
+        <div class="calendar-date streak">14</div>
+        <div class="calendar-date streak">15</div>
+        <div class="calendar-date streak">16</div>
+        <div class="calendar-date">17</div>
+        
+        <div class="calendar-date">18</div>
+        <div class="calendar-date current">19</div>
+        <div class="calendar-date future">20</div>
+        <div class="calendar-date future">21</div>
+        <div class="calendar-date future">22</div>
+        <div class="calendar-date future">23</div>
+        <div class="calendar-date future">24</div>
+      </div>
+    </div>
+    
+    <div class="insight-card">
+      <div class="insight-header">
+        <h3>Logro desbloqueado</h3>
+        <span class="insight-date">Este mes</span>
+      </div>
+      <div class="achievement">
+        <div class="achievement-icon">🏆</div>
+        <div class="achievement-details">
+          <h4>Maestro Constante</h4>
+          <p>Has completado una racha de 5 días seguidos meditando. ¡Sigue así!</p>
+          <div class="achievement-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 100%;"></div>
+            </div>
+            <span>5/5 días</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL DE CONFIGURACIÓN -->
+<div id="settingsPanelContent">
+  <button class="close-panel" id="closeSettingsPanel">×</button>
+  <h2 class="settings-title">Configuración</h2>
+  
+  <div class="settings-section">
+    <h3>Preferencias</h3>
+    
+    <div class="settings-option">
+      <label for="notificationToggle">Notificaciones</label>
+      <label class="switch">
+        <input type="checkbox" id="notificationToggle" checked>
+        <span class="theme-slider"></span>
+      </label>
+    </div>
+    
+    <div class="settings-option">
+      <label for="soundToggle">Sonidos</label>
+      <label class="switch">
+        <input type="checkbox" id="soundToggle" checked>
+        <span class="theme-slider"></span>
+      </label>
+    </div>
+    
+    <div class="settings-option">
+      <label for="vibrationToggle">Vibración</label>
+      <label class="switch">
+        <input type="checkbox" id="vibrationToggle">
+        <span class="theme-slider"></span>
+      </label>
+    </div>
+  </div>
+  
+  <div class="settings-section">
+    <h3>Cuenta</h3>
+    <div class="user-profile">
+      <div class="avatar">
+        <span>JD</span>
+      </div>
+      <div class="user-info">
+        <p class="user-name">Juan Doe</p>
+        <p class="user-email">juan@ejemplo.com</p>
+      </div>
+    </div>
+    
+    <button class="settings-button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+      Editar perfil
+    </button>
+    
+    <button class="settings-button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+      Cambiar contraseña
+    </button>
+  </div>
+  
+  <div class="settings-section">
+    <h3>Privacidad</h3>
+    
+    <div class="settings-option">
+      <label for="dataCollectionToggle">Recolección de datos de uso</label>
+      <label class="switch">
+        <input type="checkbox" id="dataCollectionToggle" checked>
+        <span class="theme-slider"></span>
+      </label>
+    </div>
+    
+    <button class="settings-button danger">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18"></path>
+        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+      </svg>
+      Eliminar cuenta
+    </button>
+  </div>
+  
+  <div class="settings-section">
+    <h3>Sobre</h3>
+    <p class="version-info">RespiraVida v1.2.0</p>
+    <div class="about-links">
+      <a href="#" class="about-link">Términos de servicio</a>
+      <a href="#" class="about-link">Política de privacidad</a>
+      <a href="#" class="about-link">Contacto</a>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL DE MÚSICA -->
+<div id="musicPanelContent">
+  <button class="close-panel" id="closeMusicPanel">×</button>
+  <h2 class="music-title">Sonidos ambientales</h2>
+  
+  <div class="current-track">
+    <div class="album-art">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <circle cx="12" cy="12" r="10"></circle>
+        <circle cx="12" cy="12" r="2"></circle>
+        <path d="M12 14 A2 2 0 0 0 12 10 A6 6 0 0 1 12 2 A9 9 0 0 1 12 22 A6 6 0 0 1 12 14"></path>
+      </svg>
+    </div>
+    <div class="track-info">
+      <p class="track-name">Lluvia suave</p>
+      <p class="track-artist">Sonidos de la naturaleza</p>
+    </div>
+    <div class="player-controls">
+      <button class="player-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="19 20 9 12 19 4 19 20"></polygon>
+        </svg>
+      </button>
+      <button class="player-button play">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="10 8 16 12 10 16 10 8"></polygon>
+        </svg>
+      </button>
+      <button class="player-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 4 15 12 5 20 5 4"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <div class="track-progress">
+    <span class="current-time">1:24</span>
+    <div class="progress-track">
+      <div class="progress-bar-music" style="width: 35%"></div>
+    </div>
+    <span class="total-time">3:45</span>
+  </div>
+  
+  <div class="volume-control">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+    <input type="range" min="0" max="100" value="65" class="volume-slider">
+  </div>
+  
+  <div class="sound-library">
+    <h3>Biblioteca de sonidos</h3>
+    
+    <div class="sound-categories">
+      <button class="category-button active">Naturaleza</button>
+      <button class="category-button">Meditación</button>
+      <button class="category-button">Binaural</button>
+      <button class="category-button">Instrumental</button>
+    </div>
+    
+    <div class="sound-list">
+      <div class="sound-item active">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 2v20M16 2v20M2 8h20M2 16h20"></path>
+        </svg>
+        <span>Lluvia suave</span>
+        <span class="sound-duration">3:45</span>
+      </div>
+      <div class="sound-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v14"></path>
+          <path d="M10 18a5 5 0 0 1-5 5H2"></path>
+          <path d="M6 14a5 5 0 0 1-5-5V6"></path>
+          <path d="M14 6a5 5 0 0 1 5-5h3"></path>
+        </svg>
+        <span>Océano</span>
+        <span class="sound-duration">5:20</span>
+      </div>
+      <div class="sound-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z"></path>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="M4.93 4.93l1.41 1.41"></path>
+          <path d="M17.66 17.66l1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="M6.34 17.66l-1.41 1.41"></path>
+          <path d="M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <span>Amanecer</span>
+        <span class="sound-duration">4:15</span>
+      </div>
+      <div class="sound-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 2v6H1v14h22V2z"></path>
+        </svg>
+        <span>Bosque</span>
+        <span class="sound-duration">6:30</span>
+      </div>
+      <div class="sound-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+        </svg>
+        <span>White Noise</span>
+        <span class="sound-duration">∞</span>
+      </div>
+    </div>
+    
+    <!-- Nuevas funcionalidades para el panel de música -->
+    <div class="sound-mix-panel">
+      <h3>Personalizar mezcla</h3>
+      <div class="sound-layer">
+        <p>Lluvia</p>
+        <input type="range" min="0" max="100" value="80" class="layer-slider">
+        <span>80%</span>
+      </div>
+      <div class="sound-layer">
+        <p>Aves</p>
+        <input type="range" min="0" max="100" value="40" class="layer-slider">
+        <span>40%</span>
+      </div>
+      <div class="sound-layer">
+        <p>Viento</p>
+        <input type="range" min="0" max="100" value="25" class="layer-slider">
+        <span>25%</span>
+      </div>
+      <button class="save-mix-button">Guardar mezcla personalizada</button>
+    </div>
+    
+    <div class="saved-mixes">
+      <h3>Mis mezclas guardadas</h3>
+      <div class="saved-mix-item">
+        <div class="mix-icon">🌧️</div>
+        <div class="mix-info">
+          <p class="mix-name">Tormenta calmada</p>
+          <p class="mix-description">Lluvia + truenos distantes + viento</p>
+        </div>
+        <button class="load-mix-button">Cargar</button>
+      </div>
+      <div class="saved-mix-item">
+        <div class="mix-icon">🌊</div>
+        <div class="mix-info">
+          <p class="mix-name">Playa al amanecer</p>
+          <p class="mix-description">Olas + gaviotas + viento suave</p>
+        </div>
+        <button class="load-mix-button">Cargar</button>
+      </div>
+    </div>
+    
+    <div class="timer-section">
+      <h3>Temporizador</h3>
+      <div class="timer-options">
+        <button class="timer-option">15 min</button>
+        <button class="timer-option">30 min</button>
+        <button class="timer-option">45 min</button>
+        <button class="timer-option">60 min</button>
+        <button class="timer-option">∞</button>
+      </div>
+      <p class="timer-status">Sonido se detendrá en: <span id="soundTimer">29:45</span></p>
+    </div>
+  </div>
+</div>
